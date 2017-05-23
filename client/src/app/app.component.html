@@ -1,0 +1,50 @@
+
+	<md-toolbar color="primary">
+
+
+
+	    <button class="app-icon-button" (click)="sidenav.toggle()">
+	      <i class="material-icons app-toolbar-menu">menu</i>
+	    </button>
+
+	    <h2 class="title_app">WEB-энциклопедия</h2>
+
+	    <span class="app-toolbar-filler"></span>
+	</md-toolbar>
+
+<md-sidenav-container>
+	<md-sidenav #sidenav mode="over">
+
+	    <md-nav-list>
+	    	<md-list-item class="md-2-line" (click)="show = false">
+	    	  <a routerLink="/latex">Latex</a>
+	    	</md-list-item>
+	    	<md-list-item class="md-2-line" (click)="show = true">
+	    	  <a routerLink="/graph" class="dropdown-toggle">Образовательные траектории</a> 
+	    	   
+	    	</md-list-item>	  
+	    	<div class="data_item" *ngIf="show">
+	    	<md-list-item class="md-4-line" >
+	    		ФАН
+	    	</md-list-item>
+	    	<md-list-item class="md-2-line" >
+	    		ЧМ
+	    	</md-list-item>
+	    	<md-list-item class="md-2-line" >
+	    		МатМод
+	    	</md-list-item>
+	    	</div>
+	    	<md-list-item class="md-2-line" (click)="show = false" >
+	    	  <a routerLink="/about">О проекте</a>
+	    	</md-list-item>	
+	    	
+	    </md-nav-list>
+
+	 </md-sidenav>
+
+	 
+	 
+	 <div class="content">
+	 <router-outlet></router-outlet>	
+	 </div>
+</md-sidenav-container>
